@@ -1,5 +1,4 @@
 import { assets } from '@/assets/assets'
-import { Asset } from 'next/font/google'
 import Image from 'next/image'
 import React from 'react'
 
