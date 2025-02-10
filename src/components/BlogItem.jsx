@@ -2,12 +2,12 @@ import { assets, blog_data } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 
-const BlogItem = () => {
+const BlogItem = ({image, category, title, description}) => {
   return (
-    <div className='max-w-[330px] sm:max-w-[300px] bg-white border border-black hover:shadow-md'>
+    <div className='max-w-[330px] sm:max-w-[300px] bg-white border border-black rounded- hover:shadow-md hover:scale-105 transition duration-150'>
 
         <Image
-        src={blog_data[0].image}
+        src={image}
         alt='image'
         width={400}
         height={400}
@@ -15,10 +15,10 @@ const BlogItem = () => {
         
         />
 
-        <p className='ml-5 mt-5 px-1 inline-block bg-black text-white text-sm'>{blog_data[0].category}</p>
+        <p className='ml-5 mt-5 px-1 inline-block bg-black text-white text-sm'>{category}</p>
         <div className='p-5'>
-            <h5 className='mb-2 text-lg font-medium tracking-tight text-gray'>{blog_data[0].title}</h5>
-            <p className='mb-3 text-sm tracking-tight text-gray-700'>{blog_data[0].description}</p>
+            <h5 className='mb-2 text-lg font-medium tracking-tight text-gray'>{title}</h5>
+            <p className='mb-3 text-sm tracking-tight text-gray-700'>{description}</p>
             <div className='inline-flex items-center py-2 font-semibold text-center'>
                 Read more <Image src={assets.arrow} alt='arrow' width={12} className='ml-2'/>
             </div>
