@@ -2,7 +2,7 @@ import { assets } from '@/assets/assets'
 import Image from 'next/image'
 import React from 'react'
 
-export default function BlogTableItem({authorImg, title, author,date}) {
+export default function BlogTableItem({authorImg, title, author,date, deleteBlog, mongoId}) {
 
     const BlogDate = new Date(date);
   return (
@@ -18,7 +18,7 @@ export default function BlogTableItem({authorImg, title, author,date}) {
         <td className='px-6 py-4'>
             {BlogDate.toDateString()}
         </td>
-        <td className='cursor-pointer'>
+        <td className='cursor-pointer' onClick={()=> deleteBlog(mongoId)}>
             x
         </td>
 
